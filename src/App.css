@@ -1,0 +1,64 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.MuiAppBar-root {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Sidebar */
+.MuiDrawer-paper {
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Button Animations */
+.MuiButton-root {
+  transition: all 0.2s ease !important;
+}
+.MuiButton-root:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3) !important;
+}
+.MuiButton-root:active {
+  transform: translateY(0px) !important;
+}
+
+/* Table Row */
+.MuiTableRow-root {
+  transition: background-color 0.15s ease !important;
+}
+
+/* Chip */
+.MuiChip-root {
+  transition: transform 0.2s ease !important;
+}
+.MuiChip-root:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Icon Button */
+.MuiIconButton-root {
+  transition: all 0.2s ease !important;
+}
+.MuiIconButton-root:hover {
+  transform: scale(1.15) !important;
+}
+
+/* Card */
+.MuiCard-root {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.MuiCard-root:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 35px rgba(25, 118, 210, 0.2) !important;
+}
+
+/* Input Focus */
+.MuiOutlinedInput-root {
+  transition: box-shadow 0.2s ease !important;
+}
+.MuiOutlinedInput-root:focus-within {
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15) !important;
+}
