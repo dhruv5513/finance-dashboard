@@ -1,7 +1,5 @@
 import { useState } from "react";
-import {
-  Button, Menu, MenuItem, ListItemIcon, Typography
-} from "@mui/material";
+import { Button, Menu, MenuItem, ListItemIcon, Typography } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import TableViewIcon from "@mui/icons-material/TableView";
 import DataObjectIcon from "@mui/icons-material/DataObject";
@@ -49,7 +47,12 @@ export default function ExportButton() {
         variant="outlined"
         startIcon={<DownloadIcon />}
         onClick={handleClick}
-        sx={{ borderRadius: 2 }}
+        sx={{
+          borderRadius: 2,
+          whiteSpace: "nowrap",
+          fontSize: { xs: 12, md: 14 },
+          px: { xs: 1.5, md: 2 },
+        }}
       >
         Export
       </Button>

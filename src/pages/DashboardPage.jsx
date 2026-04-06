@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import SummaryCards from "../components/dashboard/SummaryCards";
 import BalanceTrendChart from "../components/dashboard/BalanceTrendChart";
@@ -16,16 +16,18 @@ const fadeUp = {
 
 export default function DashboardPage() {
   const { darkMode } = useApp();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box sx={{ width: "100%" }}>
       <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
         <Typography
           fontWeight="bold"
-          mb={3}
+          mb={{ xs: 2, md: 3 }}
           sx={{
             color: darkMode ? "#fff" : "#333",
-            fontSize: { xs: 18, sm: 20, md: 24 },
+            fontSize: { xs: 16, sm: 18, md: 24 },
           }}
         >
           📊 Dashboard Overview
@@ -36,18 +38,29 @@ export default function DashboardPage() {
         <SummaryCards />
       </motion.div>
 
-      <Grid container spacing={{ xs: 2, md: 3 }}>
-        <Grid item xs={12} md={7}>
+      {isMobile ? (
+        <Box>
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2}>
             <BalanceTrendChart />
           </motion.div>
-        </Grid>
-        <Grid item xs={12} md={5}>
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={3}>
             <SpendingChart />
           </motion.div>
+        </Box>
+      ) : (
+        <Grid container spacing={3}>
+          <Grid item md={7}>
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={2}>
+              <BalanceTrendChart />
+            </motion.div>
+          </Grid>
+          <Grid item md={5}>
+            <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={3}>
+              <SpendingChart />
+            </motion.div>
+          </Grid>
         </Grid>
-      </Grid>
+      )}
     </Box>
   );
 }

@@ -5,7 +5,7 @@ A clean, interactive finance dashboard built with React + MUI for tracking incom
 ---
 
 ## 🚀 Live Demo
-> https://glittery-monstera-b16527.netlify.app/
+> https://comfy-mermaid-7eaf32.netlify.app/
 
 ---
 
